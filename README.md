@@ -27,15 +27,7 @@ cp -r ../demo_sources/src/ ./src/ # init with real sources
 
 #### Add build std config
 ```toml
-[tool.hatch.build.targets.wheel]
-packages = ["src/uv_demo"]
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[project.scripts]
-main = "uv_demo.main:main"
+cat ./demo_sources/pyproject_build.toml >> uv-demo/pyproject.toml
 ```
 
 #### Start web app
