@@ -1,6 +1,18 @@
 # lightning_talk_uv
 
 ## Demo
+### Install uv
+#### macOS and Linux
+Use curl to download the script and execute it with sh:
+```shell
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+#### Windows
+Use irm to download the script and execute it with iex:
+```shell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 
 ### Fast API Demo
 #### Init Project
