@@ -20,7 +20,7 @@ uv run main
 curl -X GET "localhost:5000/items/" | jq
 
 
-git clone git@github.com:cottet-ju-e3/lightning_talk_uv.git /tmp/lightning_talk_uv && cd /tmp/lightning_talk_uv/uv-demo && uv run main
+rm -rf /tmp/lightning_talk_uv && git clone git@github.com:cottet-ju-e3/lightning_talk_uv.git /tmp/lightning_talk_uv && cd /tmp/lightning_talk_uv/uv-demo && uv run main
 
 # Run script with dependencies
 uv run --no-project demo_sources/script.py
