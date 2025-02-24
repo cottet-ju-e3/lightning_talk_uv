@@ -1,9 +1,15 @@
-rm -rf ./uv-demo
-uv init uv-demo
-cd uv-demo
-uv add fastapi uvicorn
-cp -r ../demo_sources/src/ ./src/
+# Fast API Demo
+## Init Project
+```shell
+rm -rf ./uv-demo # clear
+uv init uv-demo # uv init
+cd uv-demo 
+uv add fastapi uvicorn # Add fastapi dependency
+cp -r ../demo_sources/src/ ./src/ # init with real sources
+```
 
+## Add build std config
+```toml
 [tool.hatch.build.targets.wheel]
 packages = ["src/uv_demo"]
 
@@ -13,19 +19,25 @@ build-backend = "hatchling.build"
 
 [project.scripts]
 main = "uv_demo.main:main"
+```
 
-# Start web app
+## Start web app
+```shell
 uv run main
-
 curl -X GET "localhost:5000/items/" | jq
+```
 
-
+```shell
 rm -rf /tmp/lightning_talk_uv && git clone git@github.com:cottet-ju-e3/lightning_talk_uv.git /tmp/lightning_talk_uv && cd /tmp/lightning_talk_uv/uv-demo && uv run main
+```
 
-# Run script with dependencies
+# Scripting
+## Run script with dependencies
+```shell
 uv run --no-project demo_sources/script.py
 uv run --with rich --with requests demo_sources/script.py
 
 uv add --script demo_sources/script.py requests rich
 
 uv run demo_sources/script.py
+```
